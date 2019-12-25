@@ -10,33 +10,15 @@ import time
 from config import *
 from pprint import pprint
 
+# Config file 'config.py' is needed with 3 lines:
+# discord_key = (valid discord API key)
+# twitch_key = (valid twitch API key)
+# master_id = discord ID of desired superuser, ideally whoever is running the bot
+
+# How long in seconds to wait before deleting the offline message
 offline_del_time = 60 * 15
 
-# Things Needed:
-# Username to ID checker
-# Twitch Online/Offline status checker
-# Add/Remove streams to config
-
-'''
-data schema
-{
-    streamers: [] (list of streamer dicts)
-}
-
-streamer schema
-{
-    name: str
-    id: str (int)
-    outputs: [] (list of output dicts)
-}
-
-output schema
-{
-    channel_id: int
-    output_message: str
-    current_message: int (message id)
-}
-'''
+# Messing around with custom exceptions...
 class TooFewArgumentsError(Exception):
     pass
 
