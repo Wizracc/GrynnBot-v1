@@ -279,11 +279,8 @@ class GrynnBot(discord.Client):
         for stream in online_list:
             current_online.add(stream["channel"]["_id"])
         # find out who's newly on or off
-        #print(previously_online)
         newly_online = current_online - previously_online
-        #print(newly_online)
         newly_offline = previously_online - current_online
-        #print(newly_offline)
         
         if len(newly_offline) > 0:
             await self.post_offline_messages(newly_offline)
